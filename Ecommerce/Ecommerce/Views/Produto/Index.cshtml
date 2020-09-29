@@ -1,0 +1,14 @@
+﻿@model List<DAL.Produto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@foreach (var p in Model)
+{
+
+    <h1>@p.Id: + @p.Name</h1>
+}
+
+
+
