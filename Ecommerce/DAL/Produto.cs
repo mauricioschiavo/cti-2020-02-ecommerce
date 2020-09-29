@@ -14,6 +14,8 @@ namespace DAL
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
+        
+        [Column]
         public string Name { get; set; }
     }
 }
