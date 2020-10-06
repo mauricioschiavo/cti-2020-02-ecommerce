@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DAL;
+﻿using DAL;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
 
 namespace Ecommerce.Controllers
 {
@@ -12,7 +10,14 @@ namespace Ecommerce.Controllers
         public IActionResult Index()
         {
             Contexto contexto = new Contexto();
-            var lsProdutos = contexto.Produtos.ToList();
+
+            //Produto novoProduto = new Produto();
+            //novoProduto.Name = "Novo ";
+            //novoProduto.Price = DateTime.Now.Second;
+            //contexto.Produtos.Add(novoProduto);
+            //contexto.SaveChanges();
+
+            var lsProdutos = contexto.Produtos.OrderBy(x => x.Name).ToList();
             return View(lsProdutos);
         }
     }

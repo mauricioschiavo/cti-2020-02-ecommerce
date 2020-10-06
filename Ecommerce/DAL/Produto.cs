@@ -11,13 +11,14 @@ namespace DAL
     [Table("tb_produtos")]
     public class Produto
     {
-        //Oi Turma
-         
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; } 
-        
-        [Column]
+        public long Id { get; set; }
+
         public string Name { get; set; }
+
+        public string Image { get; set; }
+
+        public double Price { get; set; }
     }
 }
