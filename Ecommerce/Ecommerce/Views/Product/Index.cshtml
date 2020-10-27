@@ -3,11 +3,18 @@
     ViewData["Title"] = "Index";
 }
 
+<h1>Listando Produtos (@Model.Count)</h1>
 
-@foreach (var p in Model)
-{
-    <h1>@p.Name</h1>
-}
-
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-3">
+            <a href="@Url.Action("Detail", "Product", new { Id = product.Id })">
+                <img src="@product.Image" />
+                @product.Name
+            </a>
+        </div>
+    }
+</div>
 
 
