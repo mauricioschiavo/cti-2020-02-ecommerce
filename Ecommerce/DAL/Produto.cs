@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    [Table("tb_produtos")]
+    [Table("tb_products")]
     public class Produto
     {
         [Key]
@@ -20,5 +20,10 @@ namespace DAL
         public string Image { get; set; }
 
         public double Price { get; set; }
+
+        public string Description { get; set; }
+
+        public long CategoryId { get; set; }
+
     }
 }
