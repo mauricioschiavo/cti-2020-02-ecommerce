@@ -158,8 +158,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contexto.cs" />
-    <Compile Include="Produto.cs" />
+    <Compile Include="AppContext.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

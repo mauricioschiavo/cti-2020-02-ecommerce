@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace DAL
 {
     [Table("tb_products")]
-    public class Produto
+    public class Product
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

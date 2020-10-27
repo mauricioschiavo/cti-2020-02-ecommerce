@@ -9,7 +9,7 @@ namespace Ecommerce.Controllers
     {
         public IActionResult Index()
         {
-            Contexto contexto = new Contexto();
+            DAL.AppContext contexto = new DAL.AppContext();
             var lsProdutos = contexto.Produtos.OrderBy(x => x.Name).ToList();
             return View(lsProdutos);
         }

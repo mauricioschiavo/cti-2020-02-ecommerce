@@ -3,18 +3,18 @@ using Microsoft.EntityFrameworkCore.Proxies;
 
 namespace DAL
 {
-    public class Contexto : DbContext
+    public class AppContext : DbContext
     {
-        public Contexto() : base(Connection()) { }
+        public AppContext() : base(Connection()) { }
 
-        private static DbContextOptions<Contexto> Connection()
+        private static DbContextOptions<AppContext> Connection()
         {
-            var optionsBuilder = new DbContextOptionsBuilder<Contexto>();
+            var optionsBuilder = new DbContextOptionsBuilder<AppContext>();
             optionsBuilder.UseLazyLoadingProxies();
             optionsBuilder.UseMySQL("server=remotemysql.com;database=7t1NYKRaBv;user=7t1NYKRaBv;password=Pg64t8uIFM;port=3306");
             return optionsBuilder.Options;
         }
 
-        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Product> Produtos { get; set; }
     }
 }
