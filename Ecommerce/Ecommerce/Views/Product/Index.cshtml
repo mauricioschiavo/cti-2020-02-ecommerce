@@ -8,10 +8,12 @@
 <div class="row">
     @foreach (var product in Model)
     {
-        <div class="col-3">
-            <a href="@Url.Action("Detail", "Product", new { Id = product.Id })">
-                <img src="@product.Image" />
-                @product.Name
+        <div class="col-3 mb-3">
+            <a class="card d-block" href="@Url.Action("Detail", "Product", new { Id = product.Id })">
+                <span class="card-body d-block">
+                    <img src="@product.Image" />
+                    @product.Name
+                </span>
             </a>
         </div>
     }
