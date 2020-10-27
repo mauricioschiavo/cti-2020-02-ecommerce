@@ -20,5 +20,7 @@ namespace DAL
         public string Salt { get; set; }
         public string Picture { get; set; }
         public DateTime Birthdate { get; set; }
+
+        public virtual List<Order> Orders { get; set; }
     }
 }
