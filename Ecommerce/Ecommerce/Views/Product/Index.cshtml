@@ -1,9 +1,20 @@
 ﻿@model List<DAL.Product>
 @{
     ViewData["Title"] = "Index";
+    List<DAL.Category> Categories = ViewBag.Categories;
 }
 
 <h1>Listando Produtos (@Model.Count)</h1>
+
+<div class="btn-group mb-4" role="group">
+    <a class="btn btn-secondary" href="@Url.Action("Index", "Product")">Todos</a>
+    @foreach (var category in Categories)
+    {
+        <a href="@Url.Action("Index", "Product", new { categoryId = category.Id } )" class="btn btn-secondary">
+            @category.Name
+        </a>
+    }
+</div>
 
 <div class="row">
     @foreach (var product in Model)
@@ -12,7 +23,7 @@
             <a class="card d-block" href="@Url.Action("Detail", "Product", new { Id = product.Id })">
                 <span class="card-body d-block">
                     <img src="@product.Image" />
-                    @product.Name
+                    @product.Name (@product.Category.Name)
                 </span>
             </a>
         </div>
