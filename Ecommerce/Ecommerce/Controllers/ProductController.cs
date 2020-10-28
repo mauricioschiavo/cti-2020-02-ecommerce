@@ -20,5 +20,12 @@ namespace Ecommerce.Controllers
             ViewBag.Categories = contexto.Categories.OrderBy(x => x.Name).ToList();
             return View(lsProducts);
         }
+
+        public IActionResult Detail(int id)
+        {
+            DAL.AppContext context = new DAL.AppContext();
+            Product product = context.Products.Find(id);
+            return View(product);
+        }
     }
 }
