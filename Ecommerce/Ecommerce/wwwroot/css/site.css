@@ -79,3 +79,27 @@ a {
 img {
     max-width: 100%;
 }
+
+header > nav {
+    background: none !important;
+}
+
+header {
+    background: #1b6ec2;
+    color: #FFF;
+}
+
+    header a,
+    header .navbar .navbar-brand,
+    header .navbar .navbar-nav .nav-link {
+        color: #FFFFFF99;
+    }
+    header a:hover,
+    header .navbar .navbar-brand:hover,
+    header .navbar .navbar-nav .nav-link:hover {
+        color: #FFFFFFFF;
+    }
+
+h1 {
+    color: #1b6ec2;
+}
