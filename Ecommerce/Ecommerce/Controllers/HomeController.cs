@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Ecommerce.Models;
+using Microsoft.AspNetCore.Http;
+
 
 namespace Ecommerce.Controllers
 {
@@ -20,6 +22,7 @@ namespace Ecommerce.Controllers
 
         public IActionResult Index()
         {
+            //ViewBag.User = HttpContext.Session.GetString("user");
             return View();
         }
 

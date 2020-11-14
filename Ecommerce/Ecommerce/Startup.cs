@@ -26,7 +26,6 @@ namespace Ecommerce
             services.AddControllersWithViews();
             services.AddMvc().AddRazorRuntimeCompilation();
             services.AddMvcCore();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +43,8 @@ namespace Ecommerce
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            //app.UseSession();
 
             //app.UseAuthorization();
 

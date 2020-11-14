@@ -16,7 +16,7 @@ namespace DAL
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Documento { get; set; }
+        public string Document { get; set; }
         public string Hash { get; set; }
         public string Salt { get; set; }
         public string Picture { get; set; }
