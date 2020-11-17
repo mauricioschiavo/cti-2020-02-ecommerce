@@ -22,7 +22,7 @@ namespace Ecommerce.Controllers
 
         public IActionResult Index()
         {
-            //ViewBag.User = HttpContext.Session.GetString("user");
+            ViewBag.User = HttpContext.Session.GetString("user");
             return View();
         }
 

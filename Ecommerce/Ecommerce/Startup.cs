@@ -26,6 +26,11 @@ namespace Ecommerce
             services.AddControllersWithViews();
             services.AddMvc().AddRazorRuntimeCompilation();
             services.AddMvcCore();
+            services.AddSession();
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(60);
+            });
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +49,7 @@ namespace Ecommerce
 
             app.UseRouting();
 
-            //app.UseSession();
+            app.UseSession();
 
             //app.UseAuthorization();
 
@@ -52,7 +57,7 @@ namespace Ecommerce
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Index}/{id?}");
             });
         }
     }

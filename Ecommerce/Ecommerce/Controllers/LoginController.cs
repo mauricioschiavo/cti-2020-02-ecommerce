@@ -33,7 +33,7 @@ namespace Ecommerce.Controllers
                 hash = Util.Cryptography.CreateMD5(hash);
                 if (customerDatabase.Hash == hash)
                 {
-                    //HttpContext.Session.SetString("user", customerDatabase.Name);
+                    HttpContext.Session.SetString("user", customerDatabase.Name);
                     return RedirectToAction("Index", "Home");
                 }
                 else
