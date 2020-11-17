@@ -1,6 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Http;
 @inject IHttpContextAccessor HttpContextAccessor
 
+@{ 
+    string userName = HttpContextAccessor.HttpContext.Session.GetString("user");
+}
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -33,9 +37,15 @@
                         </li>
                     </ul>
                     <span class="navbar-text">
-                        @HttpContextAccessor.HttpContext.Session.GetString("user")
+                        @if(userName != null && userName != "")
+                        {
+                            <span>Olá @userName</span>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Index", "Login")" class="btn btn-primary">Login</a>
+                        }
                     </span>
-                    
                 </div>
             </div>
         </nav>

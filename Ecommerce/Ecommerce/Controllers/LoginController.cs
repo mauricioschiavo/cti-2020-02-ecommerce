@@ -34,6 +34,7 @@ namespace Ecommerce.Controllers
                 if (customerDatabase.Hash == hash)
                 {
                     HttpContext.Session.SetString("user", customerDatabase.Name);
+                    HttpContext.Session.SetInt32("userId", customerDatabase.Id);
                     return RedirectToAction("Index", "Home");
                 }
                 else
