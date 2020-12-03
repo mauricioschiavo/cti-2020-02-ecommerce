@@ -23,7 +23,7 @@
     </div>
     <div class="col-6">
         <h2>Criar uma nova conta</h2>
-        <form method="post" action="@Url.Action("Create")">
+        <form method="post" enctype="multipart/form-data" action="@Url.Action("Create")">
             <div class="form-group">
                 <label for="name">Nome</label>
                 <input type="text" class="form-control" id="name" name="Name" />
@@ -40,6 +40,11 @@
                 <label for="pass">Senha</label>
                 <input type="password" class="form-control" id="pass" name="Hash" />
             </div>
+            <div class="form-group">
+                <label for="image">Imagem</label>
+                <input type="file" class="form-control" id="image" name="postedFile" />
+            </div>
+
             <button class="btn btn-dark">Criar Conta</button>
         </form>
     </div>
